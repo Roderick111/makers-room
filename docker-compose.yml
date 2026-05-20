@@ -1,0 +1,15 @@
+services:
+  makers-room:
+    build: .
+    container_name: makers-room
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=makers-room.beautiful-apps.com
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=makers-room.beautiful-apps.com
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
