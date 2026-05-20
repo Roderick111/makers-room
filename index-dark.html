@@ -3,7 +3,12 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Makers Room · Brutal Dark</title>
+        <title>Makers Room — build your thing alongside 15 people who give a shit</title>
+        <meta name="description" content="Free weekly Saturday sessions in Lyon. 15 makers, 3 hours, one cafe. Build products with AI, get real feedback, ship every week." />
+        <meta property="og:title" content="Makers Room — build your thing, not alone" />
+        <meta property="og:description" content="Free weekly Saturday sessions in Lyon. 15 makers, 3 hours, one cafe. Build products with AI, get real feedback, ship every week." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://makers-room.beautiful-apps.com/" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -605,13 +610,13 @@
         </style>
 
         <script
-            src="https://unpkg.com/react@18.3.1/umd/react.development.js"
-            integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+            src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"
+            integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"
             crossorigin="anonymous"
         ></script>
         <script
-            src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
-            integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+            src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"
+            integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"
             crossorigin="anonymous"
         ></script>
         <script
@@ -624,7 +629,8 @@
         <script type="text/babel" src="brutal-dark.jsx"></script>
     </head>
     <body>
-        <script>(function(){var t=localStorage.getItem("mr-theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)})()</script>
+        <script>(function(){try{var t=localStorage.getItem("mr-theme")}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)})()</script>
         <div id="root"></div>
+        <noscript><p style="color:#fff;font-family:sans-serif;padding:40px">Makers Room requires JavaScript to load. Please enable it in your browser.</p></noscript>
     </body>
 </html>

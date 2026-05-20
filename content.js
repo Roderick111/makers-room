@@ -21,15 +21,6 @@ const CONTENT = {
     scene2: "the cafe noise fades. for three hours, nobody is alone with their project. you walk in with an idea and walk out with progress",
     sceneTime: "saturday · 09:30 — 12:30 · a cafe in lyon",
 
-    diagTitle: "be honest. what are you doing right now?",
-    diagnostic: [
-      { q: "going to cafes and coworkings. still building alone", a: "proximity without relationship changes nothing" },
-      { q: "set yourself a deadline last month. missed it. set another one", a: "promises to yourself don't stick" },
-      { q: "signed up for an AI course. watched two videos. changed nothing", a: "courses teach knowledge. you need to apply it" },
-      { q: "googled your problem for an hour. got generic answers", a: "context matters more than advice" },
-      { q: "joined a discord. 500 people, nobody knows your project", a: "big communities are just small crowds" },
-    ],
-
     notTitle: "this is not",
     notThis: [
       ["not a coworking space", "people know your project"],
@@ -38,13 +29,6 @@ const CONTENT = {
       ["not a networking club", "we ship, not talk"],
       ["not a meetup", "same people, every saturday, for months"],
     ],
-    notExtras: [
-      "got a day job? most of us do. saturday mornings, 3 hours",
-      "not technical? good. the room needs you",
-      "haven't shipped yet? in-progress counts",
-      "not in lyon? paris next year. online community now",
-    ],
-
     howTitle: "how it works",
     weekly: [
       { t: "opening round", d: "what you shipped, where you're stuck, did you complete last week's challenge" },
@@ -100,12 +84,11 @@ const CONTENT = {
     joinFree: "free. no fees. no equity. no paywall. ever",
     joinWhy: "I built this because I needed such a room and couldn't find it. there's no business model, I simply know from experience how hard it is to build in isolation, without any structure",
 
-    founderBio: `i'm <a href="https://linkedin.com/in/daniel-mathias-medina" style="color: var(--green); text-decoration: underline">Daniel</a>. product background: fintech COO where i <a href="https://daniel-medina.framer.website/xlend" style="color: var(--green); text-decoration: underline">worked on a European crowdfunding license</a>, biotech partnerships, three startups from scratch. i build with AI every day, love shipping sales process automations. before that i solo-built a <a href="https://auror-academy.beautiful-apps.com/" style="color: var(--green); text-decoration: underline">full-stack AI game</a> from zero to production. <a href="https://daniel-medina.framer.website/" style="color: var(--green); text-decoration: underline">full portfolio here</a>`,
+    founderBio: `i'm <a href="https://linkedin.com/in/daniel-mathias-medina" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">Daniel</a>. product background: fintech COO where i <a href="https://daniel-medina.framer.website/xlend" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">worked on a European crowdfunding license</a>, biotech partnerships, three startups from scratch. i build with AI every day, love shipping sales process automations. before that i solo-built a <a href="https://auror-academy.beautiful-apps.com/" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">full-stack AI game</a> from zero to production. <a href="https://daniel-medina.framer.website/" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">full portfolio here</a>`,
     founderStory: "i moved to lyon two years ago and have been building solo since. i needed a room like this and couldn't find it. there's no business model here, i simply know from experience how hard it is to build in isolation, without any structure",
     founderTitle: "who started this",
 
-    bottomLinks: { faq: "faq", join: "join s01", demos: "s01 demos", os: "os" },
-    bottomPin: "introducing s02 + paris",
+    bottomLinks: { join: "join s01" },
   },
 
   fr: {
@@ -127,15 +110,6 @@ const CONTENT = {
     scene2: "le bruit du café s'estompe. pendant trois heures, personne n'est seul avec son projet. tu arrives avec une idée et tu repars avec du progrès",
     sceneTime: "samedi · 09h30 — 12h30 · un café à lyon",
 
-    diagTitle: "sois honnête. qu'est-ce que tu fais en ce moment ?",
-    diagnostic: [
-      { q: "tu vas dans des cafés et des coworkings. toujours seul", a: "la proximité sans relation ne change rien" },
-      { q: "tu t'es fixé une deadline le mois dernier. ratée. tu en as fixé une autre", a: "les promesses à soi-même ne tiennent pas" },
-      { q: "tu t'es inscrit à une formation IA. tu as regardé deux vidéos. rien n'a changé", a: "les cours donnent des connaissances. il faut les appliquer" },
-      { q: "tu as googlé ton problème pendant une heure. des réponses génériques de gens qui ne connaissent pas ton contexte", a: "le contexte compte plus que les conseils" },
-      { q: "tu as rejoint un discord. 500 personnes, personne ne connaît ton projet", a: "les grandes communautés ne sont que des petites foules" },
-    ],
-
     notTitle: "ce n'est pas",
     notThis: [
       ["pas un espace de coworking", "ici, on connaît ton projet"],
@@ -144,13 +118,6 @@ const CONTENT = {
       ["pas un club de networking", "on livre, on ne parle pas"],
       ["pas un meetup", "les mêmes personnes, chaque samedi, pendant des mois"],
     ],
-    notExtras: [
-      "tu as un job ? nous aussi. samedi matin, 3 heures",
-      "pas technique ? tant mieux. la salle a besoin de toi",
-      "rien de livré encore ? en cours ça compte",
-      "pas à lyon ? paris l'année prochaine. communauté en ligne dès maintenant",
-    ],
-
     howTitle: "comment ça marche",
     weekly: [
       { t: "tour de table", d: "ce que tu as livré, où tu bloques, est-ce que tu as terminé le challenge de la semaine dernière" },
@@ -206,12 +173,11 @@ const CONTENT = {
     joinFree: "gratuit. pas de frais. pas d'equity. pas de paywall. jamais",
     joinWhy: "j'ai créé ça parce que j'avais besoin d'un tel espace et je n'en trouvais pas. pas de business model, je sais simplement par expérience à quel point c'est dur de construire seul, sans structure",
 
-    founderBio: `je suis <a href="https://linkedin.com/in/daniel-mathias-medina" style="color: var(--green); text-decoration: underline">Daniel</a>. parcours produit : COO fintech où j'ai <a href="https://daniel-medina.framer.website/xlend" style="color: var(--green); text-decoration: underline">travaillé sur une licence européenne de crowdfunding</a>, partenariats biotech, trois startups en partant de zéro. je construis avec l'IA tous les jours, j'adore automatiser les process de vente. avant ça j'ai construit seul un <a href="https://auror-academy.beautiful-apps.com/" style="color: var(--green); text-decoration: underline">jeu IA full-stack</a> de zéro à la production. <a href="https://daniel-medina.framer.website/" style="color: var(--green); text-decoration: underline">portfolio complet ici</a>`,
+    founderBio: `je suis <a href="https://linkedin.com/in/daniel-mathias-medina" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">Daniel</a>. parcours produit : COO fintech où j'ai <a href="https://daniel-medina.framer.website/xlend" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">travaillé sur une licence européenne de crowdfunding</a>, partenariats biotech, trois startups en partant de zéro. je construis avec l'IA tous les jours, j'adore automatiser les process de vente. avant ça j'ai construit seul un <a href="https://auror-academy.beautiful-apps.com/" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">jeu IA full-stack</a> de zéro à la production. <a href="https://daniel-medina.framer.website/" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">portfolio complet ici</a>`,
     founderStory: "j'ai déménagé à lyon il y a deux ans et je construis seul depuis. j'avais besoin d'un tel espace et je n'en trouvais pas. pas de business model ici, je sais simplement par expérience à quel point c'est dur de construire seul, sans structure",
     founderTitle: "qui a lancé ça",
 
-    bottomLinks: { faq: "faq", join: "rejoindre s01", demos: "démos s01", os: "os" },
-    bottomPin: "bientôt s02 + paris",
+    bottomLinks: { join: "rejoindre s01" },
   },
 
   ru: {
@@ -233,15 +199,6 @@ const CONTENT = {
     scene2: "шум кафе стихает. три часа никто не один со своим проектом. приходишь с идеей, уходишь с результатом",
     sceneTime: "суббота · 09:30 — 12:30 · кафе в лионе",
 
-    diagTitle: "честно. чем ты сейчас занимаешься?",
-    diagnostic: [
-      { q: "сидишь в кафе и коворкингах. по-прежнему один", a: "быть рядом с людьми — не значит быть вместе" },
-      { q: "поставил себе дедлайн в прошлом месяце. сорвал. поставил новый", a: "обещания самому себе не работают" },
-      { q: "записался на курс по ИИ. посмотрел два видео. ничего не поменялось", a: "знания без практики ничего не дают" },
-      { q: "гуглил свою проблему час. получил общие ответы от людей, которые ничего не знают про твой контекст", a: "контекст важнее советов" },
-      { q: "вступил в дискорд. 500 человек, никто не знает про твой проект", a: "большое сообщество — ещё не значит полезное" },
-    ],
-
     notTitle: "это не",
     notThis: [
       ["не коворкинг", "здесь знают, что ты делаешь"],
@@ -250,13 +207,6 @@ const CONTENT = {
       ["не нетворкинг-клуб", "мы делаем, а не собираем контакты"],
       ["не митап", "одни и те же люди, каждую субботу, месяцами"],
     ],
-    notExtras: [
-      "есть основная работа? у большинства из нас тоже. субботнее утро, 3 часа",
-      "не технарь? отлично. такие тут нужны",
-      "ещё ничего не запустил? в процессе — тоже считается",
-      "не в лионе? париж в следующем году. онлайн-сообщество уже сейчас",
-    ],
-
     howTitle: "как это работает",
     weekly: [
       { t: "утренний круг", d: "что сделал за неделю, где застрял, справился ли с задачей прошлой недели" },
@@ -312,12 +262,11 @@ const CONTENT = {
     joinFree: "бесплатно. без взносов. без equity. без paywall. навсегда",
     joinWhy: "я создал это, потому что сам нуждался в таком месте и не мог найти. никакой бизнес-модели, я просто знаю по опыту, как тяжело строить в изоляции, без структуры",
 
-    founderBio: `я <a href="https://linkedin.com/in/daniel-mathias-medina" style="color: var(--green); text-decoration: underline">Даниэль</a>. продуктовый бэкграунд: COO финтеха, где я <a href="https://daniel-medina.framer.website/xlend" style="color: var(--green); text-decoration: underline">работал над европейской лицензией на краудфандинг</a>, партнёрства в биотехе, три стартапа с нуля. строю с ИИ каждый день, люблю автоматизировать продажи. до этого в одиночку создал <a href="https://auror-academy.beautiful-apps.com/" style="color: var(--green); text-decoration: underline">полноценную ИИ-игру</a> от нуля до продакшена. <a href="https://daniel-medina.framer.website/" style="color: var(--green); text-decoration: underline">полное портфолио здесь</a>`,
+    founderBio: `я <a href="https://linkedin.com/in/daniel-mathias-medina" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">Даниэль</a>. продуктовый бэкграунд: COO финтеха, где я <a href="https://daniel-medina.framer.website/xlend" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">работал над европейской лицензией на краудфандинг</a>, партнёрства в биотехе, три стартапа с нуля. строю с ИИ каждый день, люблю автоматизировать продажи. до этого в одиночку создал <a href="https://auror-academy.beautiful-apps.com/" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">полноценную ИИ-игру</a> от нуля до продакшена. <a href="https://daniel-medina.framer.website/" style="color: var(--green); text-decoration: underline" target="_blank" rel="noopener noreferrer">полное портфолио здесь</a>`,
     founderStory: "я переехал в лион два года назад и с тех пор работаю один. мне нужно было такое место, и я не мог его найти. никакой бизнес-модели, я просто знаю по опыту, как тяжело строить в изоляции, без структуры",
     founderTitle: "кто это начал",
 
-    bottomLinks: { faq: "faq", join: "вступить в s01", demos: "демо s01", os: "os" },
-    bottomPin: "скоро s02 + париж",
+    bottomLinks: { join: "вступить в s01" },
   },
 };
 

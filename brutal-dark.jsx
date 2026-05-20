@@ -42,6 +42,9 @@ function SiteImage({ src, alt }) {
       <img
         src={src}
         alt={alt}
+        loading="lazy"
+        width="800"
+        height="1000"
         style={{
           width: "110%",
           height: "110%",
@@ -56,7 +59,7 @@ function SiteImage({ src, alt }) {
 }
 
 function getInitialTheme() {
-  const stored = localStorage.getItem("mr-theme");
+  try { var stored = localStorage.getItem("mr-theme"); } catch (e) {}
   if (stored) return stored;
   if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
   return "light";
@@ -69,22 +72,20 @@ function ThemeToggle() {
     return t;
   });
   const toggle = () => {
-    const next = theme === "light" ? "dark" : "light";
-    setTheme(next);
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("mr-theme", next);
+    setTheme((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("mr-theme", next); } catch (e) {}
+      return next;
+    });
   };
   return (
-    <a
-      href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        toggle();
-      }}
-      style={{ cursor: "pointer" }}
+    <button
+      onClick={toggle}
+      style={{ cursor: "pointer", background: "none", border: "none", color: "inherit", font: "inherit", padding: 0 }}
     >
       {theme === "light" ? "◐ dark" : "◑ light"}
-    </a>
+    </button>
   );
 }
 
@@ -95,26 +96,26 @@ function LangToggle() {
   return (
     <span style={{ display: "flex", gap: 8 }}>
       {langs.map((l) => (
-        <a
+        <button
           key={l}
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            setLang(l);
-          }}
+          onClick={() => setLang(l)}
           style={{
             cursor: "pointer",
-            color: l === lang ? "var(--green)" : undefined,
+            background: "none",
+            border: "none",
+            font: "inherit",
+            color: l === lang ? "var(--green)" : "inherit",
             fontWeight: l === lang ? 600 : 400,
             minWidth: 44,
             minHeight: 44,
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
+            padding: 0,
           }}
         >
           {l}
-        </a>
+        </button>
       ))}
     </span>
   );
@@ -188,28 +189,6 @@ function SectionRoom() {
       </div>
       <div className="row__media">
         <MediaSlot label="" />
-      </div>
-    </div>
-  );
-}
-
-function SectionDiagnostic() {
-  const C = useContent();
-  return (
-    <div className="row row--full">
-      <div className="row__text row__text--noborder">
-        <h2 className="ttl" dangerouslySetInnerHTML={{ __html: C.diagTitle }} />
-        <ol className="diag">
-          {C.diagnostic.map((d, i) => (
-            <li key={i} className="diag__item">
-              <span className="diag__n">{String(i + 1).padStart(2, "0")}</span>
-              <div>
-                <p className="diag__q">{d.q}</p>
-                <span className="diag__a">→ {d.a}</span>
-              </div>
-            </li>
-          ))}
-        </ol>
       </div>
     </div>
   );
@@ -443,7 +422,7 @@ function SectionJoin() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a className="btn" href="https://t.me/daniel_mathias">
+            <a className="btn" href="https://t.me/daniel_mathias" rel="noopener noreferrer" target="_blank">
               telegram <span>→</span>
             </a>
             <a
@@ -544,12 +523,14 @@ function Bottom() {
 const SetLangContext = React.createContext(() => {});
 
 function App() {
-  const [lang, setLang] = React.useState(
-    () => localStorage.getItem("mr-lang") || "en",
-  );
+  const [lang, setLang] = React.useState(() => {
+    try { var stored = localStorage.getItem("mr-lang"); } catch (e) {}
+    return stored && CONTENT[stored] ? stored : "en";
+  });
 
   React.useEffect(() => {
-    localStorage.setItem("mr-lang", lang);
+    try { localStorage.setItem("mr-lang", lang); } catch (e) {}
+    document.documentElement.lang = lang;
   }, [lang]);
 
   return (

@@ -1,0 +1,10 @@
+.git
+.gitignore
+.DS_Store
+.dockerignore
+Dockerfile
+docker-compose.yml
+deploy.sh
+README.md
+CODE_REVIEW_OBJECTIVES.md
+ascii/
