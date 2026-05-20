@@ -534,12 +534,27 @@
                     grid-template-columns: 1fr;
                     min-height: auto;
                 }
+                .row--rev {
+                    grid-template-columns: 1fr;
+                }
+                .row--rev .row__text {
+                    border-left: 0;
+                    padding: var(--row-pad-y) 0;
+                }
+                .row--rev .row__media {
+                    padding: 8px 0 16px;
+                    order: -1;
+                }
                 .row__text {
                     border-right: 0;
                     padding-right: 0;
                 }
                 .row__media {
                     padding: 8px 0 16px;
+                }
+                .row__media pre {
+                    font-size: 6px !important;
+                    line-height: 7px !important;
                 }
                 .row__text {
                     padding-top: clamp(40px, 6vw, 64px);
