@@ -36,6 +36,107 @@ function MediaSlot({ label }) {
   );
 }
 
+const ASCII_COFFEE = `                .::.
+              -*####*-
+            :*##+*+=**.
+            *#+*#%= :=*#*=.
+            ..:=--+*-=#%##%:
+           .-.-. .-=*#*:-++.
+            .   ..+=+*+
+                   .:==
+                ..:+-.  . :
+                  -+.
+                ..:::-::...
+          .:--=+***##%%%%%%+=**+=:
+         =-::::---------=-===+*#%##=
+        -+:.          .... ... .:-*+.
+        -%#++=::::...:.............:  ..
+        .#%%%%%####**++=--:...   .:..:.....
+         *%%%%%%###**++=-:.      .=:.     :-.
+         -%%%%%####**++=-:.      .=:      =-.
+         .#%%%####***+=-:..      ::     .-=.
+          *%######**++=-:.      .:    :-=-.
+          :%######**+=-::.      -:.:-=-:.
+           +#####**++=-:.      .-:-:.
+           .*###***+=-:..     .=..
+            .+****+==-:.     .::
+              =++==--:.     .:
+               =++=-:..    --
+                :-=--:..   .`;
+
+const ASCII_ROCKET = `                                 .
+                               :=-:
+                             :=*=:..
+                           .=::-:. .
+                          :==-.--:--
+                         :== :+:..:-
+                        .::--:-:.==:
+                       .=+::-. .---.
+                      .+*= -*=:=##-
+                      ==*=+*=::***:
+                     -==++=-::=**+.
+                    .=-==-::::***=
+                    ----:::..+#*+.
+                   .=::::...-##*-
+                   --:::...-*##=
+                   -:::..:-*##+
+                   -.::.:-+*#+.
+                  ::.:::-+##*.
+                ..::::--+*#*.
+              .::.:::-:=##+.
+            .:....:::::*#+
+           .......::::+#+.  .
+          ........:::=#+... .
+          ........:.-*+....  .
+         ...... ::.-#*: .... .
+         ..:.    .:-+-. .:. .
+         .::     ::     .::..
+          .     .-      :-:.
+                -      .-:.
+               ..      ...
+            .
+            #:
+           =#  :+
+          :@=  *:
+          #% :**
+         -%%*%%.
+         #%%%%=`;
+
+const ASCII_CURSOR = `                 ::.
+                :#+*=:
+                 -=+##*=-:.
+                  =-*####+==-:.
+                  .--**##%%#*+=--:.
+                   :-=**###%%%#*+==-:.
+                    --=**#####%%%%%%#*+=--.
+                    .--+**#####%#*#**+==-:
+                     :-=+**####%#=-:
+                      --=**###*##%+-:.
+                       =-+*##+==*#%#+-:.
+                       .==*#*=::=+*#%#=::
+                        -=+#+-  .-++*#%+-=.
+                         =+*=     :=+*#%*=.
+                          --        -=+-.`;
+
+function AsciiArt({ art }) {
+  return (
+    <pre
+      style={{
+        fontFamily: "var(--font-mono)",
+        fontSize: "clamp(8px, 1.2vw, 14px)",
+        lineHeight: 1.15,
+        letterSpacing: "0.5px",
+        whiteSpace: "pre",
+        color: "var(--ink)",
+        margin: 0,
+        overflow: "hidden",
+      }}
+    >
+      {art}
+    </pre>
+  );
+}
+
 function SiteImage({ src, alt }) {
   return (
     <div style={{ width: "100%", aspectRatio: "4/5", overflow: "hidden" }}>
@@ -59,9 +160,15 @@ function SiteImage({ src, alt }) {
 }
 
 function getInitialTheme() {
-  try { var stored = localStorage.getItem("mr-theme"); } catch (e) {}
+  try {
+    var stored = localStorage.getItem("mr-theme");
+  } catch (e) {}
   if (stored) return stored;
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  )
+    return "dark";
   return "light";
 }
 
@@ -75,14 +182,23 @@ function ThemeToggle() {
     setTheme((prev) => {
       const next = prev === "light" ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("mr-theme", next); } catch (e) {}
+      try {
+        localStorage.setItem("mr-theme", next);
+      } catch (e) {}
       return next;
     });
   };
   return (
     <button
       onClick={toggle}
-      style={{ cursor: "pointer", background: "none", border: "none", color: "inherit", font: "inherit", padding: 0 }}
+      style={{
+        cursor: "pointer",
+        background: "none",
+        border: "none",
+        color: "inherit",
+        font: "inherit",
+        padding: 0,
+      }}
     >
       {theme === "light" ? "◐ dark" : "◑ light"}
     </button>
@@ -165,7 +281,7 @@ function Hero() {
         </div>
       </div>
       <div className="row__media">
-        <SiteImage src="uploads/laptop-light.png" alt="laptop in a Lyon cafe" />
+        <SiteImage src="uploads/laptop-color.png" alt="laptop in a Lyon cafe" />
       </div>
     </div>
   );
@@ -174,7 +290,10 @@ function Hero() {
 function SectionRoom() {
   const C = useContent();
   return (
-    <div id="room" className="row">
+    <div id="room" className="row row--rev">
+      <div className="row__media">
+        <AsciiArt art={ASCII_COFFEE} />
+      </div>
       <div className="row__text">
         <div>
           <h2 className="ttl">{C.sceneTitle}</h2>
@@ -186,9 +305,6 @@ function SectionRoom() {
         <p className="body--small">
           <span style={{ color: "var(--green)" }}>●</span> {C.sceneTime}
         </p>
-      </div>
-      <div className="row__media">
-        <MediaSlot label="" />
       </div>
     </div>
   );
@@ -278,7 +394,7 @@ function SectionHow() {
         </div>
       </div>
       <div className="row__media">
-        <MediaSlot label="" />
+        <AsciiArt art={ASCII_ROCKET} />
       </div>
     </div>
   );
@@ -362,7 +478,8 @@ function SectionWho() {
                 lineHeight: 1.5,
               }}
             >
-              <span style={{ fontWeight: 600 }}>{k}</span>{" "}<span style={{ color: "var(--muted)" }}>– </span>
+              <span style={{ fontWeight: 600 }}>{k}</span>{" "}
+              <span style={{ color: "var(--muted)" }}>– </span>
               <span style={{ color: "var(--muted)" }}>{v}</span>
             </div>
           ))}
@@ -422,7 +539,12 @@ function SectionJoin() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a className="btn" href="https://t.me/daniel_mathias" rel="noopener noreferrer" target="_blank">
+            <a
+              className="btn"
+              href="https://t.me/daniel_mathias"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               telegram <span>→</span>
             </a>
             <a
@@ -436,7 +558,7 @@ function SectionJoin() {
         </div>
       </div>
       <div className="row__media">
-        <MediaSlot label="" />
+        <AsciiArt art={ASCII_CURSOR} />
       </div>
     </div>
   );
@@ -524,12 +646,16 @@ const SetLangContext = React.createContext(() => {});
 
 function App() {
   const [lang, setLang] = React.useState(() => {
-    try { var stored = localStorage.getItem("mr-lang"); } catch (e) {}
+    try {
+      var stored = localStorage.getItem("mr-lang");
+    } catch (e) {}
     return stored && CONTENT[stored] ? stored : "en";
   });
 
   React.useEffect(() => {
-    try { localStorage.setItem("mr-lang", lang); } catch (e) {}
+    try {
+      localStorage.setItem("mr-lang", lang);
+    } catch (e) {}
     document.documentElement.lang = lang;
   }, [lang]);
 
@@ -545,8 +671,8 @@ function App() {
           <SectionRoom />
           <SectionWho />
           <SectionNot />
-          <SectionHow />
           <SectionAi />
+          <SectionHow />
           <SectionFounder />
           <SectionProjects />
           <SectionJoin />
