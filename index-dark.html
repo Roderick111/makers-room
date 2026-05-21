@@ -3,12 +3,26 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Makers Room — build your thing alongside 15 people who give a shit</title>
-        <meta name="description" content="Free weekly Saturday sessions in Lyon. 15 makers, 3 hours, one cafe. Build products with AI, get real feedback, ship every week." />
-        <meta property="og:title" content="Makers Room — build your thing, not alone" />
-        <meta property="og:description" content="Free weekly Saturday sessions in Lyon. 15 makers, 3 hours, one cafe. Build products with AI, get real feedback, ship every week." />
+        <title>
+            Makers Room — build your thing alongside 15 people who give a shit
+        </title>
+        <meta
+            name="description"
+            content="Free weekly Saturday sessions in Lyon. 15 makers, 3 hours, one cafe. Build products with AI, get real feedback, ship every week."
+        />
+        <meta
+            property="og:title"
+            content="Makers Room — build your thing, not alone"
+        />
+        <meta
+            property="og:description"
+            content="Free weekly Saturday sessions in Lyon. 15 makers, 3 hours, one cafe. Build products with AI, get real feedback, ship every week."
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://makers-room.beautiful-apps.com/" />
+        <meta
+            property="og:url"
+            content="https://makers-room.beautiful-apps.com/"
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,11 +68,19 @@
                 color-scheme: dark;
             }
 
-            .theme-img--light { display: none; }
-            .theme-img--dark { display: block; }
+            .theme-img--light {
+                display: none;
+            }
+            .theme-img--dark {
+                display: block;
+            }
 
-            [data-theme="light"] .theme-img--light { display: block; }
-            [data-theme="light"] .theme-img--dark { display: none; }
+            [data-theme="light"] .theme-img--light {
+                display: block;
+            }
+            [data-theme="light"] .theme-img--dark {
+                display: none;
+            }
 
             [data-theme="light"] {
                 --bg: #ffffff;
@@ -246,7 +268,8 @@
             .row--rev .row__text {
                 border-right: 0;
                 border-left: 1px dotted var(--rule-dotted);
-                padding: var(--row-pad-y) 0 var(--row-pad-y) clamp(24px, 4vw, 64px);
+                padding: var(--row-pad-y) 0 var(--row-pad-y)
+                    clamp(24px, 4vw, 64px);
             }
             .row--rev .row__media {
                 padding: 24px clamp(24px, 4vw, 64px) 24px 0;
@@ -550,11 +573,29 @@
                     padding-right: 0;
                 }
                 .row__media {
-                    padding: 8px 0 16px;
+                    padding: 16px 0 24px;
+                    order: -1;
+                }
+                .row:first-child .row__media {
+                    order: 1;
                 }
                 .row__media pre {
-                    font-size: 6px !important;
-                    line-height: 7px !important;
+                    font-size: clamp(5px, 2.5vw, 12px) !important;
+                    line-height: 1.15 !important;
+                    letter-spacing: 0 !important;
+                }
+                .cursor-mobile-flip {
+                    min-height: 60vw;
+                    overflow: visible;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    overflow: hidden;
+                    padding-bottom: 0 !important;
+                }
+                .cursor-mobile-flip > * {
+                    transform: rotate(270deg);
+                    margin-bottom: -10vw;
                 }
                 .row__text {
                     padding-top: clamp(40px, 6vw, 64px);
@@ -661,8 +702,28 @@
         <script type="text/babel" src="brutal-dark.jsx"></script>
     </head>
     <body>
-        <script>(function(){try{var t=localStorage.getItem("mr-theme")}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)})()</script>
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem("mr-theme");
+                } catch (e) {}
+                if (!t) {
+                    t =
+                        window.matchMedia &&
+                        window.matchMedia("(prefers-color-scheme: dark)")
+                            .matches
+                            ? "dark"
+                            : "light";
+                }
+                document.documentElement.setAttribute("data-theme", t);
+            })();
+        </script>
         <div id="root"></div>
-        <noscript><p style="color:#fff;font-family:sans-serif;padding:40px">Makers Room requires JavaScript to load. Please enable it in your browser.</p></noscript>
+        <noscript
+            ><p style="color: #fff; font-family: sans-serif; padding: 40px">
+                Makers Room requires JavaScript to load. Please enable it in
+                your browser.
+            </p></noscript
+        >
     </body>
 </html>

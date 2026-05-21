@@ -252,6 +252,8 @@ function AsciiArtFromFile({ src }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        background: "#050505",
+        borderRadius: "2px",
       }}
     >
       <pre
@@ -262,6 +264,7 @@ function AsciiArtFromFile({ src }) {
           lineHeight: 1.1,
           letterSpacing: "0px",
           flexShrink: 0,
+          color: "#ffffff",
         }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -605,7 +608,10 @@ function Hero() {
         </div>
       </div>
       <div className="row__media">
-        <AsciiArtFromFile src="uploads/hero-blocks.html" />
+        {IS_MOBILE
+          ? <SiteImage src="uploads/laptop-color.png" alt="laptop in a Lyon cafe" />
+          : <AsciiArtFromFile src="uploads/hero-blocks.html" />
+        }
       </div>
     </div>
   );
@@ -887,7 +893,7 @@ function SectionJoin() {
           <p className="body--small">{C.joinFree}</p>
         </div>
       </div>
-      <div className="row__media">
+      <div className="row__media cursor-mobile-flip">
         <AsciiCursorScroll art={ASCII_CURSOR} />
       </div>
     </div>
@@ -903,6 +909,7 @@ function AsciiCursorScroll({ art }) {
   const [pos, setPos] = React.useState({ x: 0, y: 0 });
 
   React.useEffect(() => {
+    if (IS_MOBILE) return;
     var FRICTION = 0.9;
     var SPRING = 0.01;
     var VELOCITY_SCALE = 0.0;
